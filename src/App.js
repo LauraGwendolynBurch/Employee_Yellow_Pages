@@ -6,7 +6,6 @@ import Filters from "./components/Filters";
 import API from "./utils/Api";
 
 class App extends React.Component {
-
   state = {
     users: [],
     search: "",
@@ -44,7 +43,8 @@ class App extends React.Component {
 
   handleButtonFirstNameSort = event => {
     event.preventDefault();
-    
+    const sortFirst =this.state.users.sort((a,b) => a.name.first > b.name.first ? 1 : -1)
+    this.setState({users: sortFirst})
   };
 
   render() {
