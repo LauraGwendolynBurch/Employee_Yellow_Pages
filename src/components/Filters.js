@@ -4,8 +4,8 @@ function Filters({handleInputChange}) {
             <div className="card-body">
                 <form>
                     <div className="form-group">
-                        <label htmlFor="nameFilter">Filter by Email</label>
-                        <input type="text" class="form-control" name="search" id="nameFilter" placeholder="Type Here to see results below" onChange={handleInputChange}/>
+                        <h2 htmlFor="nameFilter">Filter by Email</h2>
+                        <input type="text" className="form-control" name="search" id="nameFilter" placeholder="Type Here to see results below" onChange={handleInputChange}/>
                     </div>
                 </form>
             </div>

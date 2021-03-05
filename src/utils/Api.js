@@ -1,10 +1,10 @@
 import axios from "axios";
-const BASEURL = "http://randomuser.me/api/";
+const BASEURL = "https://randomuser.me/api/";
 
 const API = {
-    getUsers: function (numberUsers) {
+    getUsers: function () {
 
-        return axios.get(BASEURL + `?results=${numberUsers}`);
+        return axios.get(BASEURL +`?results=20`);
 
     }
 };
