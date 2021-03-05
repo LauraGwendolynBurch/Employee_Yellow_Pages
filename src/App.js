@@ -32,10 +32,20 @@ class App extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log(this.state.users)
-    const currentStateUser=this.state.users.filter(user => user.name.last === this.state.search)
+    const currentStateUser=this.state.users.filter(user => user.name.last.toUpperCase().includes(this.state.search.toUpperCase()) )
     this.setState({users: currentStateUser})
   }; 
 
+  handleButtonLastNameSort = event => {
+    event.preventDefault();
+    const sortLast =this.state.users.sort((a,b) => a.name.last > b.name.last ? 1 : -1)
+    this.setState({users: sortLast})
+  };
+
+  handleButtonFirstNameSort = event => {
+    event.preventDefault();
+    
+  };
 
   render() {
     return (
@@ -44,11 +54,11 @@ class App extends React.Component {
         search={this.state.search}
         handleFormSubmit={this.handleFormSubmit}
         handleInputChange={this.handleInputChange} />
-        <Filters handleInputChange={this.handleInputChange} />
-        {this.state.search}
+        <Filters 
+        handleButtonLastNameSort={this.handleButtonLastNameSort}
+        handleButtonFirstNameSort={this.handleButtonFirstNameSort} />
         <Body users={this.state.users} />
-
-      </div>
+    </div>
     )
   }
 };
