@@ -1,7 +1,7 @@
 function Header(props) {
     return (
         <div className="jumbotron" style={{ background: "pink", fontFamily: "cursive", fontWeight: "bolder", textAlign: "center" }}>
-            <h1 className="display-4">Emplyee Yellow Pages</h1>
+            <h1 className="display-4">Employee Yellow Pages</h1>
             <p>Search for any emplyee in our company </p>
             <input placeholder="Search by last name"
                 onChange={props.handleInputChange}
